@@ -1,1 +1,1 @@
-# yep
+# gcc main.c -lm
