@@ -19,7 +19,7 @@ void yep_1() {
     func_1 = ((pow(x, 2) - 3 * x) / x) + (x / (pow(x, 2) - 3 * x));
     func_2 = pow(x, 2) + ((3 * x - 2) / (3 * x + 2));
 
-    if (func_1 < 87.4) {
+    if (x < 87.4) {
         y = func_1;
     }
     else {
