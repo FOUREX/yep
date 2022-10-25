@@ -9,21 +9,18 @@ void flush() {
 
 
 void yep_1() {
-    float x, y, func_1, func_2;
+    float x, y;
 
 
     printf("Type number x: ");
     scanf("%f", &x);
 
-
-    func_1 = ((pow(x, 2) - 3 * x) / x) + (x / (pow(x, 2) - 3 * x));
-    func_2 = pow(x, 2) + ((3 * x - 2) / (3 * x + 2));
-
+    
     if (x < 87.4) {
-        y = func_1;
+        y = ((pow(x, 2) - 3 * x) / x) + (x / (pow(x, 2) - 3 * x));
     }
     else {
-        y = func_2;
+        y = pow(x, 2) + ((3 * x - 2) / (3 * x + 2));
     }
 
 
@@ -108,5 +105,7 @@ int main() {
             break;
         default:
             printf("Number from 1 to 3! NOT %c!", input);
+    
+    getc();
     }
 }
