@@ -1,20 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
-
-
-// Очистка буфера stdin, fflush(stdin) не працює
-void flush() {
-    while (getchar() != '\n') { }
-}
 
 
 void yep_1() {
     float x, y;
 
-
     printf("Type number x: ");
     scanf("%f", &x);
-
     
     if (x < 87.4) {
         y = ((pow(x, 2) - 3 * x) / x) + (x / (pow(x, 2) - 3 * x));
@@ -23,24 +16,21 @@ void yep_1() {
         y = pow(x, 2) + ((3 * x - 2) / (3 * x + 2));
     }
 
-
     printf("Result: %f", y);
 }
 
 
 void yep_2() {
+    int month;
     char months[12][9] =
     {
-    "January", "February", "March", "April",
-    "May", "June", "July", "August",
-    "September", "October", "November", "December"
+        "January", "February", "March", "April",
+        "May", "June", "July", "August",
+        "September", "October", "November", "December"
     };
-    int month;
-
 
     printf("Type month number: ");
     scanf("%d", &month);
-
 
     if (month > 0 && month < 13) {
         printf("%s", months[month - 1]);
@@ -48,34 +38,26 @@ void yep_2() {
     else {
         printf("There are only 12 months in a year!");
     }
-
 }
 
 
 void yep_3() {
     char input;
 
-
+    printf("Type letter: ");
     input = getc(stdin);
 
-
     switch (input) {
+        case 'A':
         case 'a':
             printf("Absent");
             break;
+        case 'B':
         case 'b':
             printf("Burbon");
             break;
-        case 'c':
-            printf("Coca-Cola");
-            break;
-        case 'A':
-            printf("Absent");
-            break;
-        case 'B':
-            printf("Burbon");
-            break;
         case 'C':
+        case 'c':
             printf("Coca-Cola");
             break;
         default:
@@ -85,27 +67,26 @@ void yep_3() {
 
 
 int main() {
-    char input;
-
+    int input;
 
     printf("Type number (1 - 3): ");
-    input = getc(stdin);
-    flush();
-
+    scanf("%d", &input);
+    fflush(stdin);
 
     switch (input) {
-        case '1':
+        case 1:
             yep_1();
             break;
-        case '2':
+        case 2:
             yep_2();
             break;
-        case '3':
+        case 3:
             yep_3();
             break;
         default:
-            printf("Number from 1 to 3! NOT %c!", input);
-    
-    getc();
+            printf("Number from 1 to 3! NOT %d!", input);
     }
+
+    printf("\n");
+    system("pause");
 }
