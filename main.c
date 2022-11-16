@@ -105,7 +105,7 @@ int main() {
             break;
         default:
             printf("Number from 1 to 3! NOT %c!", input);
-    
-    getc();
     }
+    
+    getc(stdin);
 }
